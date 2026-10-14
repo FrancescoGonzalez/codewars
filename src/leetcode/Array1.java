@@ -22,4 +22,22 @@ public class Array1 {
         return res;
     }
 
+    public int findMaxConsecutiveOnes(int[] nums) { //Q3
+        int res = 0, cache = 0;
+
+        for (int n : nums) {
+            if (n == 1) {
+                cache++;
+            } else {
+                cache = 0;
+            }
+
+            if (res < cache) {
+                res = cache;
+            }
+        }
+
+        return res;
+    }
+
 }
